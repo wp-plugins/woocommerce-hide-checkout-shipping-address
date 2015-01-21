@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: woocommerce-hide-checkout-shipping-address\n"
+"POT-Creation-Date: 2015-01-18 12:49+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: ../woocommerce-hide-checkout-shipping-address.php:91
+#, php-format
+msgid ""
+"The %s plugin depends on the WooCommerce plugin, which is not installed. "
+"Please install WooCommerce before using this plugin."
+msgstr ""
+
+#: ../woocommerce-hide-checkout-shipping-address.php:93
+#, php-format
+msgid ""
+"The %s plugin depends on the WooCommerce plugin, which is not yet activated. "
+"Please activate WooCommerce before using this plugin."
+msgstr ""
+
+#: ../woocommerce-hide-checkout-shipping-address.php:95
+#, php-format
+msgid ""
+"The %s requires at least WooCommerce version %s. You are currently using "
+"version %s. Please update WooCommerce before using this plugin."
+msgstr ""
+
+#: ../woocommerce-hide-checkout-shipping-address.php:97
+#, php-format
+msgid ""
+"The %s plugin depends on the WooCommerce plugin, which could not be "
+"recognized. Please check your WooCommerce plugin status before using this "
+"plugin."
+msgstr ""
+
+#: ../woocommerce-hide-checkout-shipping-address.php:179
+msgid "Hide shipping address effect"
+msgstr ""
+
+#: ../woocommerce-hide-checkout-shipping-address.php:185
+msgid "Slide"
+msgstr ""
+
+#: ../woocommerce-hide-checkout-shipping-address.php:186
+msgid "Fade"
+msgstr ""
+
+#: ../woocommerce-hide-checkout-shipping-address.php:273
+msgid "Hide shipping address"
+msgstr ""
+
+#: ../woocommerce-hide-checkout-shipping-address.php:275
+msgid "Hide"
+msgstr ""
+
+#: ../woocommerce-hide-checkout-shipping-address.php:277
+msgid ""
+"Hide the shipping address form fields on the checkout page when this "
+"shipping method is selected"
+msgstr ""
