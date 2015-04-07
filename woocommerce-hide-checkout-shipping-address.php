@@ -304,6 +304,52 @@
 
 
 			/**
+			 * Adjust the order review page if necessary
+			 *
+			 * @since 1.1
+			 *
+			 * @return void
+			 */
+			public function wc_adjust_order_review_page()
+			{
+				//Get saved settings from the admin pages
+				$this->load_plugin_settings();
+
+				add_filter( 'woocommerce_order_hide_shipping_address', function () {
+					return array_filter( array_map( function ( $method, $state ) {
+						return $state == 'yes' ? $method : '';
+					}, array_keys( $this->settings['methods'] ), $this->settings['methods'] ) );
+				}, 99 );
+			}
+
+
+			/**
+			 * Remove shipping fields information from the order completely if necessary
+			 *
+			 * @since 1.1
+			 *
+			 * @return void
+			 */
+			public function wc_adjust_order_shipping_fields()
+			{
+				$this->load_plugin_settings();
+
+				$checkout = WC()->checkout();
+				$shipping = !empty( $checkout->shipping_methods ) ? $checkout->shipping_methods : array();
+
+				if ( !empty( $shipping ) ) {
+					if ( !is_array( $shipping ) ) {
+						$shipping = array( $shipping );
+					}
+
+					if ( array_key_exists( $shipping[0], $this->settings['methods'] ) && $this->settings['methods'][$shipping[0]] == 'yes' ) {
+						$checkout->checkout_fields['shipping'] = array();
+					}
+				}
+			}
+
+
+			/**
 			 * Add settings to the main shipping settings page
 			 *
 			 * @since 1.0
@@ -386,4 +432,23 @@
 		 * Load this plugin through the static instance
 		 */
 		add_action( 'plugins_loaded', array( 'WC_HCSA', 'get_instance' ) );
+
+
+
+		//Remove shipping address form order creation if necessary
+		function wc_hcsa_adjust_order_shipping_fields()
+		{
+			WC_HCSA::get_instance()->wc_adjust_order_shipping_fields();
+		}
+
+		add_action( 'woocommerce_new_order', 'wc_hcsa_adjust_order_shipping_fields', 99 );
+
+
+		//Adjust the WooCommerce order review page
+		function wc_hcsa_adjust_order_review_page()
+		{
+			WC_HCSA::get_instance()->wc_adjust_order_review_page();
+		}
+
+		add_action( 'woocommerce_order_details_after_order_table', 'wc_hcsa_adjust_order_review_page' );
 	}

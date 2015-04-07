@@ -37,13 +37,13 @@ jQuery( document ).ready(function() {
 			} );
 			switch ( e ) {
 				case 'fade':
-					t.fadeOut();
+					t.fadeOut( function() { t.addClass( 'shipping-fields-hidden' ); } );
 					break;
 				case 'none':
-					t.hide( 0 );
+					t.hide( 0, function() { t.addClass( 'shipping-fields-hidden' ); } );
 					break;
 				default:
-					t.slideUp();
+					t.slideUp( function() { t.addClass( 'shipping-fields-hidden' ); } );
 			}
 		} else if ( wc_hcsa_settings.methods[m] == 'no' && ! s ) {
 			t.find( ':input' ).each( function() {
@@ -58,13 +58,13 @@ jQuery( document ).ready(function() {
 			} );
 			switch ( e ) {
 				case 'fade':
-					t.fadeIn();
+					t.fadeIn( function() { t.removeClass( 'shipping-fields-hidden' ); } );
 					break;
 				case 'none':
-					t.show( 0 );
+					t.show( 0, function() { t.removeClass( 'shipping-fields-hidden' ); } );
 					break;
 				default:
-					t.slideDown();
+					t.slideDown( function() { t.removeClass( 'shipping-fields-hidden' ); } );
 			}
 		}
 	}
