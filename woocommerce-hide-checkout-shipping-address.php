@@ -2,7 +2,7 @@
 	/**
 	 * Plugin Name: WooCommerce Hide Checkout Shipping Address
 	 * Description: Hide the shipping address form fields for specific shipping methods during checkout
-	 * Version: 1.0
+	 * Version: 1.1
 	 * Author: Web Whales
 	 * Author URI: https://webwhales.nl
 	 * Contributors: ronald_edelschaap
@@ -12,12 +12,12 @@
 	 * Domain Path: /languages
 	 *
 	 * Requires at least: 3.8
-	 * Tested up to: 4.1
+	 * Tested up to: 4.1.1
 	 *
 	 * @author   Web Whales
 	 * @package  WooCommerce Hide Checkout Shipping Address
 	 * @category WooCommerce
-	 * @version  1.0
+	 * @version  1.1
 	 * @requires WooCommerce version 2.1.0
 	 */
 
