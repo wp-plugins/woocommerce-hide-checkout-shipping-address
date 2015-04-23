@@ -12,7 +12,7 @@
 	 * Domain Path: /languages
 	 *
 	 * Requires at least: 3.8
-	 * Tested up to: 4.1.1
+	 * Tested up to: 4.2
 	 *
 	 * @author   Web Whales
 	 * @package  WooCommerce Hide Checkout Shipping Address
