@@ -3,7 +3,7 @@ Contributors: ronald_edelschaap
 Tags: woocommerce,hide address,hide shipping address,checkout,shipping,shipping method
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -37,10 +37,14 @@ This plugin responds to the WooCommerce builtin AJAX calls that are made when yo
 2. You can enable and disable this feature for each method individually
 
 == Changelog ==
-= 1.0 =
-First release
+= 1.2 =
+* Fixed: PHP scope error when running on PHP version 5.3.x or older
+* Improved: Code style is now fully compatible with WP code style guide
 
 = 1.1 =
 * Added: Support for the review order page
 * Added: The container of the shipping fields has an extra class "shipping-fields-hidden" when the fields are hidden
 * Improved: This plugin now removes shipping fields information from the order completely
+
+= 1.0 =
+First release
