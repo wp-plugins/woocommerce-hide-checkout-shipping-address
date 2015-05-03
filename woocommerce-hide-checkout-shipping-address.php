@@ -2,7 +2,7 @@
 	/**
 	 * Plugin Name: WooCommerce Hide Checkout Shipping Address
 	 * Description: Hide the shipping address form fields for specific shipping methods during checkout
-	 * Version: 1.2
+	 * Version: 1.2.1
 	 * Author: Web Whales
 	 * Author URI: https://webwhales.nl
 	 * Contributors: ronald_edelschaap
@@ -12,12 +12,12 @@
 	 * Domain Path: /languages
 	 *
 	 * Requires at least: 3.8
-	 * Tested up to: 4.2
+	 * Tested up to: 4.2.1
 	 *
 	 * @author   Web Whales
 	 * @package  WooCommerce Hide Checkout Shipping Address
 	 * @category WooCommerce
-	 * @version  1.2
+	 * @version  1.2.1
 	 * @requires WooCommerce version 2.1.0
 	 */
 
@@ -282,7 +282,7 @@
 				//Load some javascript
 				add_action( 'woocommerce_before_checkout_form', function () {
 					wp_enqueue_script( 'hide-checkout-shipping-address', plugins_url( '/js/hide-checkout-shipping-address.js', __FILE__ ), array( 'jquery' ), '', true );
-					wp_localize_script( 'hide-checkout-shipping-address', 'wc_hcsa_settings', $this->settings );
+					wp_localize_script( 'hide-checkout-shipping-address', 'wc_hcsa_settings', WC_HCSA::get_settings() );
 				} );
 			}
 
@@ -299,9 +299,11 @@
 				$this->load_plugin_settings();
 
 				add_filter( 'woocommerce_order_hide_shipping_address', function () {
+					$settings = WC_HCSA::get_settings();
+
 					return array_filter( array_map( function ( $method, $state ) {
 						return $state == 'yes' ? $method : '';
-					}, array_keys( $this->settings['methods'] ), $this->settings['methods'] ) );
+					}, array_keys( $settings['methods'] ), $settings['methods'] ) );
 				}, 99 );
 			}
 
@@ -328,6 +330,20 @@
 						$checkout->checkout_fields['shipping'] = array();
 					}
 				}
+			}
+
+
+			/**
+			 * Retrieve the class main settings
+			 *
+			 * @since 1.2.1
+			 *
+			 * @return array
+			 */
+			public static function get_settings() {
+				$instance = self::get_instance();
+
+				return $instance->settings;
 			}
 
 
