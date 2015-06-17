@@ -2,8 +2,8 @@
 Contributors: ronald_edelschaap
 Tags: woocommerce,hide address,hide shipping address,checkout,shipping,shipping method
 Requires at least: 3.8
-Tested up to: 4.2.1
-Stable tag: 1.2.1
+Tested up to: 4.2.2
+Stable tag: 1.2.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -37,6 +37,9 @@ This plugin responds to the WooCommerce builtin AJAX calls that are made when yo
 2. You can enable and disable this feature for each method individually
 
 == Changelog ==
+= 1.2.2 =
+* Fixed: PHP notice about calling the register_uninstall_hook incorrectly
+
 = 1.2.1 =
 * Fixed: PHP scope error when running on PHP version 5.3.x or older
 
