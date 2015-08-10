@@ -1,8 +1,8 @@
 === WooCommerce Hide Checkout Shipping Address ===
 Contributors: ronald_edelschaap
 Tags: woocommerce,hide address,hide shipping address,checkout,shipping,shipping method
-Requires at least: 3.8
-Tested up to: 4.2.2
+Requires at least: 4.0
+Tested up to: 4.3
 Stable tag: 1.2.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
