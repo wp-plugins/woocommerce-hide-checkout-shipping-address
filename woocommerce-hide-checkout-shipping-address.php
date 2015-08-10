@@ -11,14 +11,14 @@
 	 * Text Domain: wc-hcsa
 	 * Domain Path: /languages
 	 *
-	 * Requires at least: 3.8
-	 * Tested up to: 4.2.2
+	 * Requires at least: 4.0
+	 * Tested up to: 4.3
 	 *
 	 * @author   Web Whales
 	 * @package  WooCommerce Hide Checkout Shipping Address
 	 * @category WooCommerce
 	 * @version  1.2.2
-	 * @requires WooCommerce version 2.1.0
+	 * @requires WooCommerce version 2.2
 	 */
 
 
